@@ -50,7 +50,7 @@ void loop() {
   float dt = (time_now - time_prev) / 1000.0; // Convert to second(s)
   time_prev = time_now;
 
-  float angle_acc = atan2(acc_y, acc_z) * (180.0 / PI);
+  float angle_acc = atan2(a_x, a_z) * (180.0 / PI);
 
   filtered_angle = alpha * (filtered_angle + g_y * dt) + (1 - alpha) * angle_acc;
 
