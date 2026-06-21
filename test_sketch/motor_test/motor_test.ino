@@ -41,8 +41,9 @@ void driveMotor(int in1, int in2, int pwm, int speed) {
         }
         analogWrite(pwm, abs(speed));
     }
+}
 
-void driveBothMotors(int speed) {
+void driveBoth(int speed) {
     driveMotor(IN1_A, IN2_A, PWM_A, speed);
     driveMotor(IN1_B, IN2_B, PWM_B, speed);
 }
@@ -55,6 +56,7 @@ void loop(){
     Serial.println("Forward fast");
     driveBoth(255);
     delay(2000);
+
     Serial.println("Stop");
     driveBoth(0);
     delay(1000);
