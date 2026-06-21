@@ -49,12 +49,20 @@ void driveBoth(int speed) {
 }
 
 void loop(){
+    //Test smooth back and forth run
+    Serial.println("Smooth Back and Forth Run test\n");
+    delay(1000);
+
     Serial.println("Forward slow");
     driveBoth(150);
     delay(2000);
 
     Serial.println("Forward fast");
     driveBoth(255);
+    delay(2000);
+
+    Serial.println("Forward slow");
+    driveBoth(150);
     delay(2000);
 
     Serial.println("Stop");
@@ -69,7 +77,29 @@ void loop(){
     driveBoth(-255);
     delay(2000);
 
+    Serial.println("Backward slow");
+    driveBoth(-150);
+    delay(2000);
+
     Serial.println("Stop");
     driveBoth(0);
+    Serial.println("Smooth Back and Forth Run test complete\n");
+    delay(5000);
+    
+    //Test direct reversal from full forward to full backward
+    Serial.println("Direct Reversal test\n");
     delay(1000);
+
+    Serial.println("Forward fast");
+    driveBoth(255);
+    delay(2000);
+
+    Serial.println("Backward fast");
+    driveBoth(-255);
+    delay(2000);
+
+    Serial.println("Hard Stop");
+    driveBoth(0);
+    Serial.println("Direct Reversal test complete\n");
+    delay(5000);
 }
